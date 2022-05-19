@@ -7,7 +7,8 @@ import com.png.interview.weather.ui.viewmodel.CurrentWeatherViewModel
 class CurrentWeatherFragmentViewBinder(
     private val viewModel: CurrentWeatherViewModel,
     private val activity: Activity,
-    private val settingsAction: () -> Unit
+    private val settingsAction: () -> Unit,
+    private val forecastAction: () -> Unit
 ) {
 
     val availableWeatherViewData = viewModel.availableCurrentWeatherLiveData
@@ -16,11 +17,13 @@ class CurrentWeatherFragmentViewBinder(
     var input: String = ""
 
     fun refreshClicked() {
-        Toast.makeText(activity, "Refresh Clicked TODO", Toast.LENGTH_LONG).show()
+        //Toast.makeText(activity, "Refresh Clicked TODO", Toast.LENGTH_LONG).show()
+        goClicked()
     }
 
     fun seeForecastClicked() {
-        Toast.makeText(activity, "Forecast Clicked TODO", Toast.LENGTH_LONG).show()
+        //Toast.makeText(activity, "Forecast Clicked TODO", Toast.LENGTH_LONG).show()
+         forecastAction()
     }
 
     fun settingsClicked() {
@@ -29,9 +32,9 @@ class CurrentWeatherFragmentViewBinder(
 
     fun goClicked() {
         if (input.isEmpty()) {
-            Toast.makeText(activity, "Please Enter Query", Toast.LENGTH_LONG).show()
+            Toast.makeText(activity, "Please enter query", Toast.LENGTH_LONG).show()
         } else if (input.length < 3) {
-            Toast.makeText(activity, "Please Enter More than 3 Characters", Toast.LENGTH_LONG).show()
+            Toast.makeText(activity, "Please Enter more than 3 characters", Toast.LENGTH_LONG).show()
         } else {
             viewModel.submitCurrentWeatherSearch(input)
         }

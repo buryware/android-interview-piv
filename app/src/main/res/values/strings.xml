@@ -1,5 +1,5 @@
 <resources>
-	<string name="app_name">Interview Project</string>
+	<string name="app_name">Steve Interview</string>
 	<string name="network_error">Network Error</string>
 	<string name="network_error_retry">Please reconnect to the internet and try again.</string>
 	<string name="unexpected_error_occurred_body">An error has occurred during your operation, please contact support.</string>
@@ -12,9 +12,13 @@
 	<string name="current_weather">Current Weather</string>
 	<string name="local_time">Local Time:</string>
 	<string name="temp">Temperature:</string>
+	<string name="temp_F"> F</string>
+	<string name="temp_C"> C</string>
 	<string name="condition">Condition:</string>
 	<string name="wind_direction">Wind Direction:</string>
 	<string name="wind_speed">Wind Speed:</string>
+	<string name="wind_speed_MPH">MPH</string>
+	<string name="wind_speed_KPH">KPH</string>
 	<string name="go">Go</string>
 	<string name="enter_zip_or_city">Enter Zip or City</string>
 	<string name="refresh">Refresh</string>
@@ -23,6 +27,7 @@
 	<string name="please_enter_zip_or_city">Please enter a zip code or a city.</string>
 	<string name="imperial">Imperial</string>
 	<string name="metric">Metric</string>
-	<string name="units">Units</string>
+	<string name="units">Units:</string>
 	<string name="name">Name</string>
+	<string name="forecast">Forecast</string>
 </resources>

@@ -39,6 +39,9 @@ internal class NetworkResponseCall<S : Any, E : Any>(
                         )
                     }
                 } else {
+
+                    Timber.e( "Error occurred retrieving weather information")
+
                     val convertedErrorBody = try {
                         errorConverter.convert(errorBody)
                     } catch (ex: Exception) {

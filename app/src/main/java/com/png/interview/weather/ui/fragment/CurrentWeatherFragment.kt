@@ -8,9 +8,8 @@ import androidx.navigation.fragment.findNavController
 import com.png.interview.databinding.FragmentCurrentWeatherBinding
 import com.png.interview.ui.InjectedFragment
 import com.png.interview.weather.ui.binder.CurrentWeatherFragmentViewBinder
-import kotlinx.android.synthetic.main.activity_main.mainNavigationFragment
 
-class CurrentWeatherFragment : InjectedFragment() {
+class CurrentWeatherFragment() : InjectedFragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         return FragmentCurrentWeatherBinding.inflate(inflater, container,false).apply {
@@ -19,6 +18,9 @@ class CurrentWeatherFragment : InjectedFragment() {
                 requireActivity(),
                 settingsAction = {
                     findNavController().navigate(CurrentWeatherFragmentDirections.actionCurrentWeatherFragmentToSettingsFragment())
+                },
+                forecastAction = {
+                    findNavController().navigate(CurrentWeatherFragmentDirections.actionCurrentWeatherFragmentToForecastFragment())
                 }
             )
             this.lifecycleOwner = viewLifecycleOwner

@@ -16,9 +16,7 @@ import android.content.Intent as Intent
 
 
 @FlowPreview
-class SettingsFragment : InjectedFragment() {
-
-    var units_imprial: String = "imprial"
+class ForecastFragment : InjectedFragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -26,33 +24,16 @@ class SettingsFragment : InjectedFragment() {
         savedInstanceState: Bundle?
     ): View? {
 
-        var strImperialFlag : String? = savedInstanceState?.getString("units_imprial", "imprial")
-        if (strImperialFlag == null) {
-            units_imprial = "imprial"
-        } else {
-            units_imprial = strImperialFlag
-        }
+        var forecastView = FragmentSettingsBinding.inflate(inflater, container, false).root
 
-        var settingView = FragmentSettingsBinding.inflate(inflater, container, false).root
-
-        val buttonImperial = settingView?.findViewById<View>(R.id.radiobtn_imperial) as Button
-        val buttonMetric = settingView?.findViewById<View>(R.id.radiobtn_metric) as Button
-        buttonImperial.setOnClickListener{
-            units_imprial = "imprial"
-        }
-        buttonMetric.setOnClickListener{
-            units_imprial = "metric"
-        }
-
-
-        return settingView
+        return forecastView
     }
 
     override fun onSaveInstanceState(savedInstanceState: Bundle)
     {
         // Store UI state to the savedInstanceState.
         // This bundle will be passed to onCreate on next call.
-        savedInstanceState?.putCharSequence("units_imprial", units_imprial.toString())
+
     }
 
 }
