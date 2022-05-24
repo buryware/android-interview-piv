@@ -13,7 +13,7 @@
 			app:destination="@id/settingsFragment" />
 		<action
 			android:id="@+id/action_current_weather_fragment_to_forecastFragment"
-			app:destination="@id/settingsFragment" />
+			app:destination="@id/forecastFragment" />
 	</fragment>
 	<fragment
 		android:id="@+id/settingsFragment"

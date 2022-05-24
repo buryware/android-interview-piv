@@ -12,6 +12,8 @@
 	<string name="current_weather">Current Weather</string>
 	<string name="local_time">Local Time:</string>
 	<string name="temp">Temperature:</string>
+	<string name="maxtemp">Max Temperature:</string>
+	<string name="mintemp">Min Temperature:</string>
 	<string name="temp_F"> F</string>
 	<string name="temp_C"> C</string>
 	<string name="condition">Condition:</string>
