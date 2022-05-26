@@ -10,7 +10,6 @@ import com.png.interview.ui.InjectedFragment
 import com.png.interview.weather.ui.binder.CurrentWeatherFragmentViewBinder
 
 class CurrentWeatherFragment() : InjectedFragment() {
-
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         return FragmentCurrentWeatherBinding.inflate(inflater, container,false).apply {
             viewBinder = CurrentWeatherFragmentViewBinder(

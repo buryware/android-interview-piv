@@ -39,12 +39,12 @@
 				android:layout_height="wrap_content"
 				android:textSize="20sp"
 				android:text="@string/units"
-				app:layout_constraintTop_toTopOf="@id/rd_group"
-				app:layout_constraintBottom_toBottomOf="@id/rd_group"
+				app:layout_constraintTop_toTopOf="@id/units_group"
+				app:layout_constraintBottom_toBottomOf="@id/units_group"
 				app:layout_constraintStart_toStartOf="parent"/>
 
 			<RadioGroup
-				android:id="@+id/rd_group"
+				android:id="@+id/units_group"
 				android:layout_width="190dp"
 				android:layout_height="wrap_content"
 				android:orientation="horizontal"

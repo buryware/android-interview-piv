@@ -1,10 +1,7 @@
 package com.png.interview.weather.domain
 
 import com.png.interview.api.common_model.NetworkResponse
-import com.png.interview.weather.ui.model.AvailableWeatherViewData
-import com.png.interview.weather.ui.model.CurrentWeatherViewRepresentation
-import com.png.interview.weather.ui.model.ForecastViewData
-import com.png.interview.weather.ui.model.ForecastViewRepresentation
+import com.png.interview.weather.ui.model.*
 import java.text.DateFormat
 import java.text.SimpleDateFormat
 import javax.inject.Inject
@@ -14,10 +11,10 @@ interface CreateForecastRepFromQueryUseCase {
 }
 
 class DefaultCreateForecastRepFromQueryUseCase @Inject constructor(
-    private val getCurrentWeatherDataUseCase: GetCurrentWeatherDataUseCase
-) : CreateCurrentWeatherRepFromQueryUseCase {
-    override suspend fun invoke(query: String): ForecastViewRepresentation.ForecastViewRep {
-        return when (val result = getCurrentWeatherDataUseCase(query)) {
+    private val GetForecastDataUseCase: GetForecastDataUseCase
+) : CreateForecastRepFromQueryUseCase {
+    override suspend fun invoke(query: String): ForecastViewRepresentation {
+        return when (val result = GetForecastDataUseCase(query)) {
             is NetworkResponse.Success -> {
                 ForecastViewRepresentation.ForecastViewRep(
                     ForecastViewData(
@@ -29,7 +26,9 @@ class DefaultCreateForecastRepFromQueryUseCase @Inject constructor(
                     )
                 )
             }
-            else -> {}
+            else -> {
+                ForecastViewRepresentation.Error
+            }
         }
     }
 }

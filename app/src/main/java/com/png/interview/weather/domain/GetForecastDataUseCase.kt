@@ -5,13 +5,13 @@ import com.png.interview.weather.api.WeatherApi
 import com.png.interview.weather.api.model.ForecastResponse
 import javax.inject.Inject
 
-interface GetForecastWeatherDataUseCase {
+interface GetForecastDataUseCase {
     suspend operator fun invoke(query: String): NetworkResponse<ForecastResponse, Unit>
 }
 
-class DefaultGetForecastWeatherDataUseCase @Inject constructor(
+class DefaultGetForecastDataUseCase @Inject constructor(
     private val weatherApi: WeatherApi
-) : GetForecastWeatherDataUseCase {
+) : GetForecastDataUseCase {
     override suspend fun invoke(query: String): NetworkResponse<ForecastResponse, Unit> {
         return weatherApi.getForecast(query)
     }

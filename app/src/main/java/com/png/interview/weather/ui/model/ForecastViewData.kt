@@ -1,6 +1,6 @@
 package com.png.interview.weather.ui.model
 
-data class ForecastWeatherViewData(
+data class ForecastViewData(
     val date: String,
     val min_temperature: String,
     val max_temperature: String,

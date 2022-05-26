@@ -9,7 +9,7 @@ import android.widget.RadioButton
 import androidx.core.app.BundleCompat
 import com.png.interview.App
 import com.png.interview.R
-import com.png.interview.databinding.FragmentSettingsBinding
+import com.png.interview.databinding.FragmentForecastBinding
 import com.png.interview.ui.InjectedFragment
 import kotlinx.coroutines.FlowPreview
 import android.content.Intent as Intent
@@ -24,7 +24,7 @@ class ForecastFragment : InjectedFragment() {
         savedInstanceState: Bundle?
     ): View? {
 
-        var forecastView = FragmentSettingsBinding.inflate(inflater, container, false).root
+        var forecastView = FragmentForecastBinding.inflate(inflater, container, false).root
 
         return forecastView
     }
